@@ -1,0 +1,22 @@
+<section class="w-full max-w-6xl mx-auto bg-dark/50 backdrop-blur border border-slate-700/30 rounded-lg p-6 flex flex-col gap-4 mb-8 relative z-10">
+  <div class="flex flex-col md:flex-row gap-4 items-center">
+    <label for="nodeCount" class="min-w-[120px] font-medium">Number of Nodes:</label>
+    <input type="number" id="nodeCount" placeholder="e.g. 5" class="flex-1 px-3 py-2 rounded bg-slate-800 text-light w-full" />
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-4 items-center">
+    <label for="edgesInput" class="min-w-[120px] font-medium">Edges (u v):</label>
+    <textarea id="edgesInput" rows="3" placeholder="Example:\n0 1\n1 2" class="flex-1 px-3 py-2 rounded bg-slate-800 text-light w-full resize-none"></textarea>
+  </div> 
+
+  <div class="flex flex-col md:flex-row gap-4 items-center">
+    <label for="startNode" class="min-w-[120px] font-medium">Start Node:</label>
+    <input type="number" id="startNode" placeholder="e.g. 0" class="flex-1 px-3 py-2 rounded bg-slate-800 text-light w-full" />
+  </div>
+
+  <div class="flex flex-wrap gap-4 mt-4 justify-center md:justify-start">
+    <button id="runButton" class="bg-teal-500 hover:bg-cyan-500 px-4 py-2 rounded text-white font-semibold transition">Run</button>
+    <button onclick="pauseDFS()" class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded text-white font-semibold transition">Pause</button>
+    <button onclick="stopDFS()" class="bg-red-500 hover:bg-red-400 px-4 py-2 rounded text-white font-semibold transition">Stop</button>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Depth First Search (DFS)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/algocss.css" />
+</head>
+
+<body class="min-h-screen overflow-y-auto px-4 py-10 relative">
+
+  <!-- 🔠 Header -->
+  <header class="text-center mb-6 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-green-400 bg-clip-text text-transparent animate-float">
+      Depth First Search (DFS)
+    </h1>
+    <p class="mt-4 text-light/80 max-w-2xl text-center mx-auto text-lg">
+      DFS explores as far down a path as possible before backtracking. It's useful for deep traversal, cycle detection, and maze solving.
+    </p>
+  </header>
+
+  <!-- 🧩 Input Panel will load here -->
+  <div id="input-panel" class="mb-8"></div>
+
+  <!-- 🎯 Graph Visualization + Output -->
+  <main class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+    <!-- Graph Canvas -->
+    <div class="bg-slate-700 rounded-lg shadow-inner p-2">
+      <svg id="graphCanvas" class="w-full h-[500px] rounded"></svg>
+    </div>
+
+    <!-- DFS Output -->
+    <div class="bg-slate-800 text-light p-4 rounded shadow-inner max-h-[500px] overflow-y-auto">
+      <h3 class="text-xl font-semibold mb-2 text-primary">DFS Traversal Steps:</h3>
+      <div id="output" class="text-sm leading-relaxed space-y-1"></div>
+    </div>
+  </main>
+
+  <!-- 📘 Explanation -->
+  <section class="max-w-6xl mx-auto mt-12 p-6 bg-dark/60 rounded-xl border border-slate-600 shadow-xl relative z-10">
+    <h2 class="text-2xl font-semibold text-primary mb-3">How DFS Works:</h2>
+    <p class="text-light/80 leading-relaxed">
+      Depth First Search (DFS) starts at the selected node and explores as far as possible along each branch before backtracking.
+      It uses a recursive (or stack-based) approach to dive deep into graph paths. Nodes are marked as visited to prevent cycles.
+      DFS is commonly used for connectivity checking, cycle detection, and solving puzzles like mazes.
+    </p>
+  </section>
+
+  <!-- 📜 Scripts -->
+  <script type="module">
+    import { runDFS } from '../algorithms/dfs.js';
+    window.runAlgorithm = runDFS;
+  </script>
+
+  <script type="module" src="../input-handler/backgroundEffects.js"></script>
+  <script type="module" src="../input-handler/loadInputPanel.js"></script>
+  <script type="module" src="../input-handler/common.js"></script>
+</body>
+</html>

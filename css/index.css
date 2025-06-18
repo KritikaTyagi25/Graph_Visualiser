@@ -1,0 +1,119 @@
+/* index.css */
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(-45deg, #1e293b, #0f172a, #1e293b, #334155);
+  background-size: 400% 400%;
+  animation: bgAnimate 15s ease infinite;
+  color: #f8fafc;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Sparkle effect */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+  animation: sparkle 3s infinite ease-in-out;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+/* Particle */
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: float 15s linear infinite;
+  z-index: 0;
+}
+
+/* Graph Node */
+.graph-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.7);
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.5));
+  animation: pulse 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Connection line */
+.connection-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.1));
+  transform-origin: left center;
+  z-index: 0;
+}
+
+/* Shooting Star */
+.shooting-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px white);
+  animation: shootingStar 8s linear infinite;
+  opacity: 0;
+  z-index: 0;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+@keyframes shootingStar {
+  0% { transform: translate(0, 0) rotate(30deg); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(500px, 250px) rotate(30deg); opacity: 0; }
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card Hover */
+.card-hover-effect {
+  transition: all 0.3s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated path */
+.graph-path {
+  stroke: rgba(99, 102, 241, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 10;
+  stroke-dashoffset: 100;
+  animation: draw 8s linear infinite;
+  fill: none;
+}
